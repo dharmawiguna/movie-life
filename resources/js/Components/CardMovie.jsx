@@ -1,5 +1,6 @@
 import React from "react";
 import PropsType from "prop-types";
+import { Link } from "@inertiajs/react";
 
 CardMovie.PropsType = {
     slug: PropsType.string.isRequired,
@@ -30,7 +31,10 @@ export default function CardMovie({ slug, name, category, thumbnail }) {
             >
                 <img src="/icons/ic_play.svg" className="" width="50" alt="" />
             </div>
-            <a href={slug} className="inset-0 absolute z-50"></a>
+            <Link
+                href={route("prototype.movie.detail", slug)}
+                className="inset-0 absolute z-50"
+            ></Link>
         </div>
     );
 }
