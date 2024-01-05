@@ -1,19 +1,19 @@
 import React, { useEffect, useRef } from "react";
-import PropTypes from "prop-types";
+import propTypes from "prop-types";
 
-Input.PropTypes = {
-    type: PropTypes.oneOf(["text", "email", "number", "password", "file"]),
-    name: PropTypes.string,
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    className: PropTypes.string,
-    variant: PropTypes.oneOf(["primary", "error", "primary-outline"]),
-    autoComplete: PropTypes.string,
-    required: PropTypes.bool,
-    isFocused: PropTypes.bool,
-    handleChange: PropTypes.func,
-    placeholder: PropTypes.string,
-    isError: PropTypes.bool,
+Input.propTypes = {
+    type: propTypes.oneOf(["text", "email", "number", "password", "file"]),
+    name: propTypes.string,
+    value: propTypes.oneOfType([propTypes.string, propTypes.number]),
+    defaultValue: propTypes.oneOfType([propTypes.string, propTypes.number]),
+    className: propTypes.string,
+    variant: propTypes.oneOf(["primary", "error", "primary-outline"]),
+    autoComplete: propTypes.string,
+    required: propTypes.bool,
+    isFocused: propTypes.bool,
+    onChange: propTypes.func,
+    placeholder: propTypes.string,
+    isError: propTypes.bool,
 };
 
 export default function Input({
@@ -26,7 +26,7 @@ export default function Input({
     autoComplete,
     required,
     isFocused,
-    handleChange,
+    onChange,
     placeholder,
     isError,
 }) {
@@ -51,7 +51,7 @@ export default function Input({
                 ref={input}
                 autoComplete={autoComplete}
                 required={required}
-                onChange={(e) => handleChange(e)}
+                onChange={(e) => onChange(e)}
                 placeholder={placeholder}
             />
         </div>
