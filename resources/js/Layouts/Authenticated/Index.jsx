@@ -13,7 +13,7 @@ export default function Authenticated({ auth, children }) {
                 <div className="ml-[300px] px-[50px]">
                     <div className="py-10 flex flex-col gap-[50px]">
                         {/* {/* Start TopBar */}
-                        <Topbar name={auth.user.name} />
+                        <Topbar name={auth?.user?.name} />
                         {/* {/* End TopBar */}
                         <main>{children}</main>
                     </div>

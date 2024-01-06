@@ -3,9 +3,9 @@ import { Head, Link } from "@inertiajs/react";
 import React from "react";
 import ReactPlayer from "react-player";
 
-export default function Detail() {
+export default function Detail({ auth }) {
     return (
-        <Authenticated>
+        <Authenticated auth={auth}>
             <Head>
                 <title>Detail</title>
             </Head>

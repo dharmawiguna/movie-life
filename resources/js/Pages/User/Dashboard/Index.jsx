@@ -2,10 +2,10 @@ import CardMovie from "@/Components/CardMovie";
 import FeaturedMovie from "@/Components/FeaturedMovie";
 import Authenticated from "@/Layouts/Authenticated/Index";
 import { Head } from "@inertiajs/react";
-import React from "react";
+import React, { useEffect } from "react";
 import Flickity from "react-flickity-component";
 
-export default function Dashboard({ auth }) {
+export default function Dashboard({ auth, featuredMovie, movies }) {
     const flickityOptions = {
         cellAlign: "left",
         contain: true,
@@ -31,13 +31,13 @@ export default function Dashboard({ auth }) {
                 </div>
                 <Flickity className="gap-[30px]" options={flickityOptions}>
                     {/*  Movie Thumbnail */}
-                    {[1, 2, 3, 4].map((i) => (
+                    {featuredMovie?.map((movie, i) => (
                         <FeaturedMovie
-                            slug="batman"
-                            name="The Batman"
-                            category="Action"
-                            thumbnail="/images/featured-1.png"
-                            rating={4}
+                            slug={movie.slug}
+                            name={movie.name}
+                            category={movie.category}
+                            thumbnail={movie.thumbnail}
+                            rating={movie.rating}
                             key={i}
                         />
                     ))}
@@ -46,17 +46,17 @@ export default function Dashboard({ auth }) {
             {/* <!-- /Featured --> */}
 
             <div>
-                <div className="font-semibold text-[22px] text-black mb-4">
+                <div className="font-semibold text-[22px] text-black mb-4 mt-5">
                     Browse
                 </div>
                 <Flickity className="gap-[30px]" options={flickityOptions}>
-                    {[1, 2, 3, 4, 5, 6].map((i) => (
+                    {movies?.map((movie) => (
                         <CardMovie
-                            slug="batman"
-                            name="The Batman"
-                            category="Action"
-                            thumbnail="/images/featured-1.png"
-                            key={i}
+                            slug={movie.slug}
+                            name={movie.name}
+                            category={movie.category}
+                            thumbnail={movie.thumbnail}
+                            key={movie.id}
                         />
                     ))}
                 </Flickity>

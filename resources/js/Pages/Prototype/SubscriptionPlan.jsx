@@ -3,9 +3,9 @@ import Authenticated from "@/Layouts/Authenticated/Index";
 import { Head } from "@inertiajs/react";
 import React from "react";
 
-export default function SubscriptionPlan() {
+export default function SubscriptionPlan({ auth }) {
     return (
-        <Authenticated>
+        <Authenticated auth={auth}>
             <Head>
                 <title>Subscription</title>
             </Head>

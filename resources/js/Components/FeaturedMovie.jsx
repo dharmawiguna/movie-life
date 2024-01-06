@@ -1,13 +1,13 @@
 import React from "react";
-import PropTypes from "prop-types";
+import propTypes from "prop-types";
 import { Link } from "@inertiajs/react";
 
-FeaturedMovie.PropTypes = {
-    slug: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
-    thumbnail: PropTypes.string.isRequired,
-    thumbnail: PropTypes.number,
+FeaturedMovie.propTypes = {
+    slug: propTypes.string.isRequired,
+    name: propTypes.string.isRequired,
+    category: propTypes.string.isRequired,
+    thumbnail: propTypes.string.isRequired,
+    rating: propTypes.string,
 };
 
 export default function FeaturedMovie({
@@ -29,7 +29,7 @@ export default function FeaturedMovie({
                 <div className="p-[30px] flex items-center gap-1">
                     <img src="/icons/ic_star.svg" alt="" />
                     <span className="text-sm font-medium text-white mt-1">
-                        {rating.toFixed(1)}/5.0
+                        {rating}/5.0
                     </span>
                 </div>
             </div>

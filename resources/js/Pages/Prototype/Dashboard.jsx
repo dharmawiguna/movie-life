@@ -5,7 +5,7 @@ import { Head } from "@inertiajs/react";
 import React from "react";
 import Flickity from "react-flickity-component";
 
-export default function Dashboard() {
+export default function Dashboard({ auth }) {
     const flickityOptions = {
         cellAlign: "left",
         contain: true,
@@ -16,7 +16,7 @@ export default function Dashboard() {
         draggable: ">1",
     };
     return (
-        <Authenticated>
+        <Authenticated auth={auth}>
             <Head>
                 <link
                     rel="stylesheet"
