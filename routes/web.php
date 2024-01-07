@@ -29,6 +29,9 @@ use Inertia\Inertia;
 //     ]);
 // });
 
+// midtrans route
+Route::post('midtrans/notifications', [SubscriptionPlanController::class, 'midtransCallback']);
+
 Route::redirect('/', '/login');
 
 Route::middleware(['auth', 'role:user'])->prefix('dashboard')->name('user.dashboard.')->group(function () {
