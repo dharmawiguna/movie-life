@@ -10,6 +10,7 @@ Button.propTypes = {
         "white-outline",
         "light-outline",
         "danger",
+        "blue",
     ]),
     processing: propTypes.bool,
     children: propTypes.node,

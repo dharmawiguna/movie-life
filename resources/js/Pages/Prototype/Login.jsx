@@ -64,6 +64,7 @@ export default function Login() {
                                     <Button
                                         type="button"
                                         variant="light-outline"
+                                        className="w-full"
                                     >
                                         <span className="text-base text-white">
                                             Create New Account
